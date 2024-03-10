@@ -1,0 +1,44 @@
+@custom-media --medium (max-width: 1023px);
+@custom-media --small (max-width: 734px);
+
+:root {
+  --filter: blur(60px);
+  --filter-alt: blur(240px) saturate(180%);
+  --gap: 24px;
+  --radius: 8px;
+  --outline: rgba(117, 117, 117, 0.4);
+  --head1: clamp(1.5rem, 7vw - 1rem, 3.5rem);
+  --head2: clamp(1.188rem, 5vw - 1rem, 2.5rem);
+  --head3: clamp(1.063rem, 5vw - 1rem, 2rem);
+  --head4: clamp(1.188rem, 0.4vw + 1rem, 1.313rem);
+  --mono: 12px;
+}
+[data-theme="dark"] {
+  --base: rgba(32, 32, 32, 1);
+  --base-alt: rgba(28, 28, 28, 1);
+  --layer: rgba(58, 58, 58, 0.3);
+  --layer-alt: rgba(255, 255, 255, 0.0538);
+  --acrylic: rgba(44, 44, 44, 0.96);
+  --mica: rgba(32, 32, 32, 0.8);
+  --stroke: rgba(0, 0, 0, 0.1);
+  --stroke-solid: rgba(28, 28, 28, 1);
+  --text: rgba(255, 255, 255, 1);
+  --text-secondary: rgba(255, 255, 255, 0.5);
+  --shadow: 0px 2px 4px rgba(0, 0, 0, 0.26);
+  --accent: rgba(32, 148, 250, 1);
+}
+[data-theme="light"] {
+  --base: rgba(255, 255, 255, 1);
+  --base-alt: rgba(250, 250, 250, 1);
+  --layer: rgba(243, 243, 243, 0.5);
+  --layer-alt: rgba(243, 243, 243, 1);
+  --acrylic: rgba(255, 255, 255, 0.85);
+  --mica: rgba(243, 243, 243, 0.5);
+  --stroke: rgba(0, 0, 0, 0.0578);
+  --stroke-solid: rgba(246, 246, 246, 1);
+  --text: rgba(0, 0, 0, 0.8956);
+  --text-secondary: rgba(0, 0, 0, 0.6063);
+  --shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+
+  --accent: rgba(0, 122, 255, 1);
+}

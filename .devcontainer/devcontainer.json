@@ -1,0 +1,36 @@
+{
+  "name": "Node.js",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": { "USER": "${localEnv:USER}" }
+  },
+
+  // Set *default* container specific settings.json values on container create.
+  "settings": {},
+
+  // Add the IDs of extensions you want installed when the container is created.
+  // Note that some extensions may not work in Alpine Linux. See https://aka.ms/vscode-remote/linux.
+  "extensions": [
+    "svelte.svelte-vscode",
+    "visualstudioexptteam.vscodeintellicode",
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "eg2.vscode-npm-script",
+    "ms-vscode.live-server",
+    "esbenp.prettier-vscode",
+    "syler.sass-indented",
+    "ms-edgedevtools.vscode-edge-devtools",
+    "christian-kohler.path-intellisense",
+    "christian-kohler.npm-intellisense",
+    "GitHub.copilot",
+    "ms-playwright.playwright",
+    "GitHub.copilot-labs",
+    "csstools.postcss",
+    "GitHub.vscode-pull-request-github",
+    "donjayamanne.githistory"
+  ],
+  //"runArgs": ["--security-opt", "label=disable", "--userns=keep-id", "--rm"],
+  //"containerUser": "${localEnv:USER}",
+  "shutdownAction": "stopContainer"
+  //"remoteUser": "${localEnv:USER}"
+}

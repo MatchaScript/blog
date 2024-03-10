@@ -1,0 +1,309 @@
+[data-theme="dark"] {
+  --selection-background: #264f78;
+  --tag: #569cd6;
+  --attribute-name: #9cdcfe;
+  --comment: #6a9955;
+  --foreground: #d4d4d4;
+  --inserted: #b5cea8;
+  --deleted: #ce9178;
+  --keyword: #569cd6;
+  --keyword-control: #c586c0;
+  --placeholder: #9cdcfe;
+  --function: #dcdcaa;
+  --regexp: #d16969;
+  --constant: #569cd6;
+  --class: #4ec9b0;
+  --keys: #9cdcfe;
+  --escape: #d7ba7d;
+  --selector: #d7ba7d;
+  --punctuation: #808080;
+  --string-literal: #ce9178;
+}
+[data-theme="light"] {
+  --selection-background: #add6ff;
+  --tag: #800000;
+  --attribute-name: #ff0000;
+  --comment: #008000;
+  --foreground: #000000;
+  --inserted: #098658;
+  --deleted: #a31515;
+  --keyword: #0000ff;
+  --keyword-control: #af00db;
+  --placeholder: #001080;
+  --function: #795e26;
+  --regexp: #d16969;
+  --constant: #0000ff;
+  --class: #267f99;
+  --keys: #267f99;
+  --escape: #ee0000;
+  --selector: #800000;
+  --punctuation: #800000;
+  --string-literal: #a31515;
+}
+
+pre[class*="language-"],
+code[class*="language-"] {
+  color: var(--foreground);
+  font-size: 0.85rem;
+  text-shadow: none;
+  font-family: "Cascadia Code", "SF Mono", "Andale Mono", "Ubuntu Mono", "Courier New", monospace;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+}
+
+pre[class*="language-"]::selection,
+code[class*="language-"]::selection,
+pre[class*="language-"] *::selection,
+code::selection {
+  text-shadow: none;
+  background: var(--selection-background);
+}
+
+@media print {
+  pre[class*="language-"],
+  code[class*="language-"] {
+    text-shadow: none;
+  }
+}
+
+pre[class*="language-"] {
+  padding: 1rem 1em;
+  overflow: auto;
+  border-radius: var(--radius);
+  background: var(--layer);
+  border: 1px solid var(--stroke);
+}
+
+:not(pre) > code {
+  padding: calc(var(--radius) / 2);
+  border-radius: calc(var(--radius) / 2);
+  border: 1px solid var(--stroke);
+  color: #db4c69;
+  background: var(--layer);
+}
+/*********************************************************
+* Tokens
+*/
+.namespace {
+  opacity: 0.7;
+}
+
+.token.doctype .token.doctype-tag {
+  color: var(--tag);
+}
+
+.token.doctype .token.name {
+  color: var(--attribute-name);
+}
+
+.token.comment,
+.token.prolog {
+  color: var(--comment);
+}
+
+.token.punctuation,
+.language-html .language-css .token.punctuation,
+.language-html .language-javascript .token.punctuation {
+  color: var(--foreground);
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.inserted,
+.token.unit {
+  color: var(--inserted);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.deleted {
+  color: var(--deleted);
+}
+
+.language-css .token.string.url {
+  text-decoration: underline;
+}
+
+.token.operator,
+.token.entity {
+  color: var(--foreground);
+}
+
+.token.operator.arrow {
+  color: var(--keyword);
+}
+
+.token.atrule {
+  color: var(--deleted);
+}
+
+.token.atrule .token.rule {
+  color: var(--keyword-control);
+}
+
+.token.atrule .token.url {
+  color: var(--placeholder);
+}
+
+.token.atrule .token.url .token.function {
+  color: var(--function);
+}
+
+.token.atrule .token.url .token.punctuation {
+  color: var(--foreground);
+}
+
+.token.keyword {
+  color: var(--keyword);
+}
+
+.token.keyword.module,
+.token.keyword.control-flow {
+  color: var(--keyword-control);
+}
+
+.token.function,
+.token.function .token.maybe-class-name {
+  color: var(--function);
+}
+
+.token.regex {
+  color: var(--regexp);
+}
+
+.token.important {
+  color: var(--keyword);
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.constant {
+  color: var(--constant);
+}
+
+.token.class-name,
+.token.maybe-class-name {
+  color: var(--class);
+}
+
+.token.console {
+  color: var(--placeholder);
+}
+
+.token.parameter {
+  color: var(--placeholder);
+}
+
+.token.interpolation {
+  color: var(--constant);
+}
+
+.token.punctuation.interpolation-punctuation {
+  color: var(--constant);
+}
+
+.token.boolean {
+  color: var(--class);
+}
+
+.token.property,
+.token.variable,
+.token.imports .token.maybe-class-name,
+.token.exports .token.maybe-class-name {
+  color: var(--placeholder);
+}
+
+.token.selector {
+  color: var(--selector);
+}
+
+.token.escape {
+  color: var(--escape);
+}
+
+.token.tag {
+  color: var(--tag);
+}
+
+.token.tag .token.punctuation {
+  color: var(--punctuation);
+}
+
+.token.cdata {
+  color: var(--punctuation);
+}
+
+.token.attr-name {
+  color: var(--attribute-name);
+}
+
+.token.attr-value,
+.token.attr-value .token.punctuation {
+  color: var(--string-literal);
+}
+
+.token.attr-value .token.punctuation.attr-equals {
+  color: var(--foreground);
+}
+
+.token.entity {
+  color: var(--keyword);
+}
+
+.token.namespace {
+  color: var(--class);
+}
+/*********************************************************
+* Language Specific
+*/
+
+pre[class*="language-javascript"],
+code[class*="language-javascript"],
+pre[class*="language-jsx"],
+code[class*="language-jsx"],
+pre[class*="language-typescript"],
+code[class*="language-typescript"],
+pre[class*="language-tsx"],
+code[class*="language-tsx"] {
+  color: var(--keys);
+}
+
+pre[class*="language-css"],
+code[class*="language-css"] {
+  color: var(--deleted);
+}
+
+pre[class*="language-html"],
+code[class*="language-html"] {
+  color: var(--foreground);
+}
+
+.language-regex .token.anchor {
+  color: var(--escape);
+}
+
+.language-html .token.punctuation {
+  color: var(--punctuation);
+}
+/*********************************************************
+* Line highlighting
+*/
+pre[class*="language-"] > code[class*="language-"] {
+  z-index: 1;
+}
+
+.line-highlight.line-highlight {
+  background: #f7ebc6;
+  box-shadow: inset 5px 0 0 #f7d87c;
+  z-index: 0;
+}
