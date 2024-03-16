@@ -1,9 +1,11 @@
 <script lang="ts">
-  import { Share, Button } from "$lib/components";
+  import { Share, Button, Image } from "$lib/components";
   export let title;
   export let date;
   export let description;
   export let url;
+  export let slug;
+  export let images;
   export let tags = "";
   const formatDate = (dt) => {
     let date = new Date(dt);
@@ -25,9 +27,18 @@
     </div>
     <h1>{title}</h1>
     <div>{description}</div>
-
     <div>
       <Share {title} {url} />
+    </div>
+    <div class="media">
+      <Image
+        srcset={images}
+        slug="/posts/{slug}"
+        width={images.origin.width}
+        height={images.origin.height}
+        alt={title}
+        lazy="eager"
+      />
     </div>
   </div>
 </div>
@@ -35,6 +46,11 @@
 <style lang="postcss">
   .container {
     display: contents;
+  }
+  .media {
+    margin: 4px 4px var(--gap) 4px;
+    overflow: hidden;
+    border-radius: var(--radius);
   }
   .item {
     grid-column: 3/5;
@@ -48,6 +64,7 @@
   .date {
   }
   .tags {
+    margin-top: 2px;
     display: flex;
     gap: 4px;
   }

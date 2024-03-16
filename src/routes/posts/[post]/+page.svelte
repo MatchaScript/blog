@@ -1,24 +1,26 @@
 <script>
   export let data;
   import { ToC, ArticleHeader } from "$lib/components";
+  import { siteTitle, siteLink } from "$lib/config";
   import "../../../styles/code.postcss";
   import "../../../styles/posts.postcss";
-  const url = `https://example.com/posts/${data.meta.slug}`;
+  const url = `${siteLink}/posts/${data.meta.slug}`;
+  const title = `${data.meta.title} | ${siteTitle}`;
+  const thumb = `${siteLink}/${data.meta.slug}/${data.meta.coverImage.origin.name}`;
 </script>
 
 <svelte:head>
-  <!--<title>{title}</title>
-	<meta data-key="description" name="description" content="{excerpt}">
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content={title} />
-	<meta name="twitter:title" content={title} />-->
-  <!-- 
-	<meta property="og:description" content={excerpt} />
-	<meta name="twitter:description" content={excerpt} /> -->
-  <!-- <meta property="og:image" content="https://example.com/image_path" /> -->
-  <!--<meta property="og:image:width" content={coverWidth} />
-	<meta property="og:image:height" content={coverHeight} />-->
-  <!-- <meta name="twitter:image" content="https://example.com/image_path" /> -->
+  <title>{title}</title>
+  <meta data-key="description" name="description" content={data.meta.description} />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content={title} />
+  <meta name="twitter:title" content={title} />
+  <meta property="og:description" content={data.meta.description} />
+  <meta name="twitter:description" content={data.meta.description} />
+  <meta property="og:image" content={thumb} />
+  <meta property="og:image:width" content={data.meta.coverImage.origin.width} />
+  <meta property="og:image:height" content={data.meta.coverImage.origin.height} />
+  <meta name="twitter:image" content={thumb} />
 </svelte:head>
 
 <article class="post">
@@ -27,6 +29,8 @@
     title={data.meta.title}
     date={data.meta.date}
     description={data.meta.description}
+    slug={data.meta.slug}
+    images={data.meta.coverImage}
     {url}
   />
   <ToC headings={data.meta.headings} />
