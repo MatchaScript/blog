@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Hamburger } from "$lib/components";
+  import { siteTitle } from "$lib/config";
   export let isOnTop = true;
 </script>
 
@@ -7,7 +8,7 @@
   <div class="border {isOnTop ? 'short' : 'long'}" />
   <div class="bg {isOnTop ? '' : 'acrylic'}" />
   <div class="title">
-    <a href="/">解決しない備忘録</a>
+    <a href="/">{siteTitle}</a>
   </div>
   <div class="header-content">
     <Hamburger />
@@ -20,7 +21,7 @@
 
   header {
     display: contents;
-    & * {
+    & div {
       position: sticky;
       top: 0;
     }
@@ -29,11 +30,12 @@
     }
     & .title {
       font-size: var(--head4);
-      grid-area: 1/3/2/4;
+      grid-area: 1/3/2/5;
       display: flex;
-      z-index: 3;
+      z-index: 4;
       & a {
         text-decoration: none;
+        white-space: nowrap;
         color: var(--text);
         align-self: center;
       }
@@ -70,7 +72,7 @@
     }
     @media only screen and (--medium) {
       & .title {
-        grid-area: 1/2/2/5;
+        grid-area: 1/2/2/4;
       }
       & .header-content {
         grid-area: 1/4/2/7;
