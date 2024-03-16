@@ -27,6 +27,7 @@
   }
   input[type="radio"] {
     appearance: none;
+    display: none;
     padding: 0;
     margin: 0;
   }
@@ -35,9 +36,12 @@
     color: var(--base);
   }
   .text {
-    padding: 0 0.5rem;
+    box-sizing: border-box;
+    padding: 0 0.5rem 2px 0.5rem;
     border-radius: 8px;
     color: var(--text);
+    text-align: center;
+    min-width: 3.5rem;
   }
   label {
     border-radius: 8px;
@@ -45,6 +49,8 @@
     display: inline-flex;
     height: 100%;
     justify-content: center;
+    align-items: center;
+    overflow: hidden;
     padding: 1px;
     width: 100%;
   }
