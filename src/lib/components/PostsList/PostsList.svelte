@@ -71,10 +71,10 @@
     flex: 1;
     width: auto;
     height: 150px;
-
     @media only screen and (--small) {
       height: 105px;
       width: 105px;
+      flex: none;
     }
   }
   .text {
