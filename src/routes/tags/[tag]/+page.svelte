@@ -16,9 +16,11 @@
     <Pagination currentPage={1} totalPosts={data.total} path="/tags/{data.tag}" />
   </div>
 {:else}
-  <p><strong>Ope!</strong> Sorry, couldn't find any posts in the category "{data.tag}".</p>
-  <p><a href="/tags"> タグ一覧 </a></p>
-  <p><a href="/blog">Back to blog</a></p>
+  <main>
+    <p>Couldn't find any posts in the category "{data.tag}".</p>
+    <p><a href="/tags"> タグ一覧 </a></p>
+    <p><a href="/blog">Back to home</a></p>
+  </main>
 {/if}
 
 <style lang="postcss">
@@ -30,5 +32,8 @@
     grid-column: 3/6;
     display: flex;
     justify-content: center;
+  }
+  a {
+    color: var(--accent);
   }
 </style>
