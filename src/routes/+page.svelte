@@ -1,10 +1,12 @@
 <script>
   export let data;
   import { TopPage, Button } from "$lib/components";
+  import { siteTitle, siteDescription } from "$lib/config";
 </script>
 
 <svelte:head>
-  <title>Blog</title>
+  <title>{siteTitle}</title>
+  <meta data-key="description" name="description" content={siteDescription} />
 </svelte:head>
 
 <main>
